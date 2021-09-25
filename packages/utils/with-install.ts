@@ -19,7 +19,7 @@ export const withInstall = <T, E extends Record<string, any>>(
   return main as SFCWithInstall<T> & E
 }
 
-export const withInstallFunction = <T>(fn: T, name: string) => {
+export const withFunctionInstall = <T>(fn: T, name: string) => {
   ;(fn as SFCWithInstall<T>).install = (app) => {
     app.config.globalProperties[name] = fn
   }
